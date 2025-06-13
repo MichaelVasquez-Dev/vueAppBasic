@@ -74,6 +74,7 @@
 import SearchBar from './SearchBar.vue'
 import UserCard from './UserCard.vue'
 import UserModal from './UserModal.vue'
+import { userService } from '@/services/userService'
 
 export default {
   name: 'UserList',
@@ -100,15 +101,10 @@ export default {
       this.loading = true
       this.error = null
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        if (!response.ok) {
-          throw new Error('Error al cargar los usuarios')
-        }
-        this.users = await response.json()
+        this.users = await userService.getUsers()
         this.filteredUsers = this.users
       } catch (error) {
         this.error = error.message
-        console.error('Error:', error)
       } finally {
         this.loading = false
       }
