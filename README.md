@@ -27,7 +27,7 @@ Aplicación de lista de usuarios desarrollada con Vue 3 y Vuetify 3, que consume
 
 1. Clonar el repositorio:
 ```bash
-git clone [URL_DEL_REPOSITORIO]
+git clone https://github.com/MichaelVasquez-Dev/vueAppBasic.git
 cd brm-users-app
 ```
 
